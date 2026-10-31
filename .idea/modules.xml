@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/holograms/AJLeaderboardsLumarionFork.holograms.main.iml" filepath="$PROJECT_DIR$/.idea/modules/holograms/AJLeaderboardsLumarionFork.holograms.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AJLeaderboardsLumarionFork.main.iml" filepath="$PROJECT_DIR$/.idea/modules/AJLeaderboardsLumarionFork.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nms/nms-19/AJLeaderboardsLumarionFork.nms.nms-19.main.iml" filepath="$PROJECT_DIR$/.idea/modules/nms/nms-19/AJLeaderboardsLumarionFork.nms.nms-19.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nms/nms-legacy/AJLeaderboardsLumarionFork.nms.nms-legacy.main.iml" filepath="$PROJECT_DIR$/.idea/modules/nms/nms-legacy/AJLeaderboardsLumarionFork.nms.nms-legacy.main.iml" />
+    </modules>
+  </component>
+</project>

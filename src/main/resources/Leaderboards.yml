@@ -1,0 +1,79 @@
+# ──────────────────────────────────────────────────────────────────────────────
+#  Leaderboards.yml  (AJLeaderboardsLumarionFork)
+#
+#  Aufbau wie die Scoreboard.yml des Duels-Systems: jede Zeile ist ein MiniMessage-Template.
+#  Theme-Tags:  <ok> <err> <warn> <info> <acc> <cyan> <hi> <mute> <dim>
+#  Dazu alles, was MiniMessage kann: <gradient:#8B5CF6:#22D3EE>, <bold>, <hover>, <click> ...
+#
+#  Platzhalter (Top-Liste):
+#    <board> <board_id> <type> <type_id> <page> <pages> <size>
+#    Pro Eintrag: <rank> <rank_color>..</rank_color> <player> <value> <value_pretty> <time> <uuid>
+#
+#  Statistiken werden über die UUID getrackt. <player> ist nur der zuletzt bekannte Name.
+#  Nach /ajlb reload werden Änderungen an dieser Datei übernommen.
+# ──────────────────────────────────────────────────────────────────────────────
+
+format:
+  # Kleine Kapitälchen für Board-Titel (wie in den Duels-Menüs)
+  small-caps-titles: true
+  # Eigene Anzeigenamen je Board (Board-ID: Name). Ohne Eintrag wird die ID hübsch formatiert.
+  board-names:
+    statistic_player_kills: "Kills"
+    statistic_deaths: "Tode"
+  types:
+    ALLTIME: "Gesamt"
+    HOURLY: "Stündlich"
+    DAILY: "Täglich"
+    WEEKLY: "Wöchentlich"
+    MONTHLY: "Monatlich"
+    YEARLY: "Jährlich"
+  rank-colors:
+    rank-1: "#FBBF24"
+    rank-2: "#D1D5DB"
+    rank-3: "#D97706"
+    default: "#9CA3AF"
+
+top:
+  page-size: 10
+  header:
+    - "<dim>━━━━━━━━━━━━━━━━━━━━━━━━━━━━</dim>"
+    - "<bold><gradient:#8B5CF6:#22D3EE><board></gradient></bold> <dim>»</dim> <mute><type></mute>"
+    - ""
+  entry:
+    default: "<click:run_command:'/lbstats <uuid>'><rank_color><rank>.</rank_color> <hi><player></hi> <dim>│</dim> <ok><value></ok></click>"
+    rank-1: "<click:run_command:'/lbstats <uuid>'><rank_color><bold>★ <rank>.</bold></rank_color> <hi><bold><player></bold></hi> <dim>│</dim> <ok><value></ok></click>"
+    rank-2: "<click:run_command:'/lbstats <uuid>'><rank_color><bold>✦ <rank>.</bold></rank_color> <hi><player></hi> <dim>│</dim> <ok><value></ok></click>"
+    rank-3: "<click:run_command:'/lbstats <uuid>'><rank_color><bold>✦ <rank>.</bold></rank_color> <hi><player></hi> <dim>│</dim> <ok><value></ok></click>"
+    # Eintrag des Betrachters selbst
+    self: "<click:run_command:'/lbstats <uuid>'><acc>▶ <rank>.</acc> <hi><bold><player></bold></hi> <dim>│</dim> <ok><value></ok></click>"
+    empty: "<dim><rank>. -</dim>"
+  empty:
+    - "<mute>Noch keine Einträge in dieser Bestenliste.</mute>"
+  own:
+    - ""
+    - "<mute>Dein Platz</mute> <dim>»</dim> <acc>#<rank></acc> <dim>│</dim> <ok><value></ok>"
+  own-none:
+    - ""
+    - "<mute>Du bist in dieser Bestenliste noch nicht gelistet.</mute>"
+  footer:
+    - "<mute>Seite <hi><page></hi><dim>/</dim><hi><pages></hi></mute> <dim>│</dim> <mute><hi><size></hi> Spieler</mute>"
+    - "<dim>━━━━━━━━━━━━━━━━━━━━━━━━━━━━</dim>"
+
+stats:
+  header:
+    - "<dim>━━━━━━━━━━━━━━━━━━━━━━━━━━━━</dim>"
+    - "<bold><gradient:#8B5CF6:#22D3EE>ꜱᴛᴀᴛɪꜱᴛɪᴋᴇɴ</gradient></bold> <dim>»</dim> <hi><player></hi> <dim>(</dim><mute><type></mute><dim>)</dim>"
+    - ""
+  entry: "<dim>▪</dim> <mute><board></mute> <dim>»</dim> <ok><value></ok> <dim>│</dim> <mute>Platz</mute> <acc>#<rank></acc>"
+  footer:
+    - "<dim>━━━━━━━━━━━━━━━━━━━━━━━━━━━━</dim>"
+
+messages:
+  no-permission: "<err>Dafür hast du keine Berechtigung."
+  top-usage: "<mute>Benutzung <dim>»</dim> <hi>/<label> <board> [typ] [seite]</hi>"
+  stats-usage: "<mute>Benutzung <dim>»</dim> <hi>/<label> <spieler|uuid> [typ]</hi>"
+  boards: "<mute>Bestenlisten <dim>»</dim> <hi><boards></hi>"
+  board-unknown: "<err>Die Bestenliste <hi><board_id></hi> gibt es nicht."
+  page-invalid: "<err>Ungültige Seite. <mute>Es gibt <hi><pages></hi> Seite(n)."
+  player-unknown: "<err>Für <hi><player></hi> wurde kein Spieler gefunden."
+  stats-none: "<mute><hi><player></hi> ist in keiner Bestenliste gelistet."

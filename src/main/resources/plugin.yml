@@ -1,0 +1,34 @@
+name: ajLeaderboards
+version: "@VERSION@"
+main: us.ajg0702.leaderboards.LeaderboardPlugin
+folia-supported: true
+author: ajgeiss0702
+authors: [Lumarion fork contributors]
+website: https://github.com/ajgeiss0702/ajLeaderboards
+depend: [PlaceholderAPI]
+softdepend: [Vault, SkinsRestorer]
+description: Leaderboards for your server (AJLeaderboardsLumarionFork, fork of ajLeaderboards - GPLv3)
+api-version: 1.13
+commands:
+   ajleaderboards:
+      aliases: [ajlb, ajl, alb]
+      description: Commands for ajLeaderboards
+      permission: ajleaderboards.use
+   bestenliste:
+      aliases: [lbtop, topliste]
+      description: Zeigt eine Bestenliste
+      permission: ajleaderboards.top
+   lbstats:
+      aliases: [lbstat, bestenstats]
+      description: Zeigt die Platzierungen eines Spielers
+      permission: ajleaderboards.top
+permissions:
+   ajleaderboards.leaderboard:
+      description: Allows /ajlb hologram (hologram management)
+      default: op
+   ajleaderboards.top:
+      description: Allows /bestenliste and /lbstats
+      default: true
+   ajleaderboards.use:
+      description: Allows you to set up the plugin
+      default: op
